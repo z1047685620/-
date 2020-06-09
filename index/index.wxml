@@ -1,0 +1,82 @@
+ <!-- <view class="page-bod">
+ <image src="../images/y.png" class="index-icon"></image>    
+
+ </view>    -->
+ <!--pages/my/my.wxml-->
+<form reportSubmit bindsubmit="submitFormId">
+ 
+      <image src="../images/y.png" class="index-icon"></image>    
+ 
+  <!-- 功能列表 -->
+  <view class="nav">
+ 
+
+      <view bindtap="openPage" class="item" data-url="/pages/my_course/my_course" formType="submit" hoverClass="none">
+      <view class='wallet'>
+      <image src="../images/d.png" style=" height:120rpx; width:100rpx;"></image>
+      </view>
+        <view class="text-info">
+            <text>甜美女生</text>
+             <text class="text-f">标准,温柔,甜美,严厉,亲和,自然等女发音人;支持中英文场景</text>
+       </view>
+      <view class="icon">
+      <image src="../images/jt.png"></image>
+       </view>
+    </view>
+
+    
+        <view bindtap="openPage" class="item" data-url="/pages/my_course/my_course" formType="submit" hoverClass="none">
+      <view class='wallet'>
+        <image src="../images/d.png" style=" height:120rpx; width: 100rpx;"></image>
+      </view>
+        <view class="text-info">
+            <text>通用发音人</text>
+             <text class="text-f">标准男生音;支持中英文场景</text>
+       </view>
+      <view class="icon">
+      <image src="../images/jt.png"></image>
+       </view>
+    </view>
+
+       <view bindtap="openPage" class="item" data-url="/pages/my_course/my_course" formType="submit" hoverClass="none">
+      <view class='wallet'>
+     <image src="../images/d.png" style=" height:120rpx; width: 100rpx;"></image>
+      </view>
+        <view class="text-info">
+            <text>英文发音人</text>
+             <text class="text-f">仅支持英文场景</text>
+       </view>
+      <view class="icon">
+      <image src="../images/jt.png" ></image>
+       </view>
+    </view>
+
+         <view bindtap="openPage" class="item" data-url="/pages/my_course/my_course" formType="submit" hoverClass="none">
+      <view class='wallet'>
+        <image src="../images/d.png" style=" height:120rpx; width: 100rpx;"></image>
+      </view>
+        <view class="text-info">
+            <text>童声发音人</text>
+             <text class="text-f">儿童音,萝莉音;仅支持中文场景</text>
+       </view>
+      <view class="icon">
+      <image src="../images/jt.png"></image>
+       </view>
+    </view>
+
+     <view bindtap="openPage" class="item" data-url="/pages/my_course/my_course" formType="submit" hoverClass="none">
+      <view class='wallet'>
+        <image src="../images/d.png" style=" height:120rpx; width: 100rpx;"></image>
+      </view>
+        <view class="text-info">
+            <text>方言发音人</text>
+             <text class="text-f">仅支持粤语(简体)中英文场景</text>
+       </view>
+      <view class="icon">
+      <image src="../images/jt.png"></image>
+       </view>
+    </view>
+ 
+  
+  </view>
+</form>

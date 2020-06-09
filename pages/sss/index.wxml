@@ -1,0 +1,109 @@
+<view>
+<!-- 搜索框 -->
+<view>
+     <view>
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+            <!-- 搜索框 -->
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="请输入搜索关键词"/>
+                </view>
+            </view>
+            <!-- 搜索按钮,调用搜索查询方法 -->
+            <view class="weui-search-bar__cancel-btn" bindtap='方法名a'>搜索</view>
+        </view>
+    </view>
+</view>
+
+<!-- 选择选项 -->
+<view class="opts">
+<view class="opt">
+<image src="../images/y.png" class="opt-icon"></image>
+<text class="txt-font">精选音效</text>
+</view>
+<view class="opt">
+<image src="../images/y.png" class="opt-icon"></image>
+<text class="txt-font">广告设计</text>
+</view>
+<view class="opt">
+<image src="../images/y.png" class="opt-icon"></image>
+<text class="txt-font">影视音效</text>
+</view>
+<view class="opt">
+<image src="../images/y.png" class="opt-icon"></image>
+<text class="txt-font">游戏音效</text>
+</view>
+<view class="opt">
+<image src="../images/y.png" class="opt-icon"></image>
+<text class="txt-font">语言音效</text>
+</view>
+<view class="opt">
+<image src="../images/y.png" class="opt-icon"></image>
+<text class="txt-font">动画音效</text>
+</view>
+<view class="opt">
+<image src="../images/y.png" class="opt-icon"></image>
+<text class="txt-font">其他音效</text>
+</view>
+<view class="opt">
+<image src="../images/y.png" class="opt-icon"></image>
+<text class="txt-font">全部音效</text>
+</view>
+</view>
+
+
+</view>
+<!-- 列表 -->
+ <view class="nav">
+ <view wx:for="{{soundEffectsLibrary}}" wx:key="key" class="item" hoverClass="none">
+ <view class='wallet'>
+      <image src="../images/d.png" style=" height:120rpx; width:120rpx;"></image>
+          <view class="text-info">
+           <text>甜美女生</text>
+             <text class="text-f">00:00----00:02</text>
+       </view>
+</view>
+     
+    </view>
+
+    
+       <!-- <view bindtap="openPage" class="item" data-url="/pages/my_course/my_course" formType="submit" hoverClass="none">
+      <view class='wallet'>
+      <image src="../images/d.png" style=" height:120rpx; width:120rpx;"></image>
+      <view class="text-info">
+            <text>甜美女生</text>
+             <text class="text-f">00:00----00:02</text>
+       </view>
+      </view>
+    </view> -->
+</view>
+
+
+<!-- 导航栏目  -->
+<view class="foot">
+<view class="tab">
+<image src='{{footSrc1.iamges}}' data-id='1' data-url='{{footSrc1.url}}'  bindtap='Navigation'></image>
+<view>
+首页
+</view>
+</view>
+<view class="tab">
+<image src='{{footSrc2.iamges}}' data-id='2' data-url='{{footSrc2.url}}'  bindtap='Navigation'></image>
+<view>
+音效库
+</view>
+</view>
+<view class="tab">
+<image src='{{footSrc3.iamges}}' data-id='3' data-url='{{footSrc3.url}}'  bindtap='Navigation'></image>
+<view>
+更多工具
+</view>
+</view>
+<view class="tab">
+<image src='{{footSrc4.iamges}}' data-id='4' data-url='{{footSrc4.url}}'  bindtap='Navigation'></image>
+<view>
+我的
+</view>
+</view>
+</view>

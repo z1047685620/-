@@ -1,0 +1,21 @@
+{
+  "pages":[
+    "pages/selectinfo/index",
+
+    "pages/index/index",
+    
+    "pages/sss/index",
+  
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTitleText": "完美AI配音",
+    "navigationBarTextStyle":"black"
+  } ,
+ 
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"   
+  
+}

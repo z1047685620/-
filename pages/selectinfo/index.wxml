@@ -1,0 +1,265 @@
+<!-- 选择发音人 -->
+<view wx:if='{{selectedOrNot==true}}'>
+<view>
+<scroll-view scroll-x="true" bindscroll="scroll" class="scroll-view_H list-liu" >
+  <view class="scroll-view-W">
+  <view wx:for="{{sceneTypes}}" wx:key="{{item.value}}">
+  <view class="scroll-view-item_H swiper-tab-list {{currentTab==item.current?'on':''}}" data-current="{{item.current}}" bindtap="swichNav" hover-class="eee">{{item.name}}</view>
+  </view>
+   </view>
+</scroll-view>
+  
+<!-- 选项卡内容 -->
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange" style="height:{{clientHeight?clientHeight+'px':'auto'}}">  
+  <!--  通用场景  -->
+  <swiper-item>   
+    <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+      <view class="kong"></view>
+    
+      <view wx:if="{{informantsList.currency==''}}" class="vacancy">
+        <image src="../../../img/icon/icon-vacancy.png"></image>
+        <view>暂时没有相关的发音人</view>
+      </view>
+      <view wx:else>
+        <view class="list" wx:for="{{informantsList.currency}}" wx:key="{{item.voice}}" wx:for-index="index">
+          <view class="shop">
+            <view class="shop-left">
+               <image src="{{item.img}}"></image>
+              <view class="shop-left-info">
+              <text style="font-size: 35rpx;">{{item.name}}</text>
+              <text style="font-size: 25rpx;">{{item.memo}}</text>
+              </view>
+            </view>
+            <view class="shop-centre" >
+              <image style="width: 60rpx; height: 60rpx;" src="{{broadcastVoice != item.voice?start:stop}}" bindtap="onBroadcast" data-voice="{{item.voice}}" data-audition="{{item.audition}}"></image>
+              <text style="font-size: 30rpx;">试听 </text>
+               </view>
+            <view class="shop-right">
+                <image     src="{{item.opt?cancel:define}}" bindtap="addSpeaker" data-array="{{informantsList.currency}}" data-name="{{item.name}}" data-memo="{{item.memo}}" data-voice="{{item.voice}}"  data-opt="{{item.opt}}" data-sceneType="currency" data-img="{{item.img}}" data-optImg="{{item.optImg}}"  data-index="{{index}}"></image> 
+            </view>
+          </view>
+        </view>
+      </view>
+      
+    </scroll-view>
+  </swiper-item>  
+
+
+
+     <!-- 所有客服发音人 --> 
+  <swiper-item>  
+    <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view class="kong"></view>
+      <view wx:if="{{informantsList.customer==''}}" class="vacancy">
+        <image src="../../../img/icon/icon-vacancy.png"></image>
+        <view>暂时没有相关的发音人</view>
+      </view>
+      <view wx:else>
+        <view class="list" wx:for="{{informantsList.customer}}" wx:key="{{item.voice}}">
+          <view class="shop">
+            <view class="shop-left">
+               <image src="{{item.img}}"></image>
+              <view class="shop-left-info">
+              <text style="font-size: 35rpx;">{{item.name}}</text>
+              <text style="font-size: 25rpx;">{{item.memo}}</text>
+              </view>
+            </view>
+           <view class="shop-centre" >
+              <image style="width: 60rpx; height: 60rpx;" src="{{broadcastVoice != item.voice?start:stop}}" bindtap="onBroadcast" data-voice="{{item.voice}}" data-audition="{{item.audition}}"></image>
+              <text style="font-size: 30rpx;">试听</text>
+               </view>
+            <view class="shop-right">
+             <image   src="{{item.opt?cancel:define}}" bindtap="addSpeaker" data-array="{{informantsList.customer}}"   data-name="{{item.name}}" data-memo="{{item.memo}}" data-voice="{{item.voice}}"  data-opt="{{item.opt}}" data-sceneType="customer"  data-index="{{index}}" data-img="{{item.img}}" data-optImg="{{item.optImg}}" ></image> 
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>  
+ 
+
+ <!-- 所有童声发音人 --> 
+    <swiper-item>  
+    <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view class="kong"></view>
+      <view wx:if="{{informantsList.child==''}}" class="vacancy">
+        <image src="../../../img/icon/icon-vacancy.png"></image>
+        <view>暂时没有相关的发音人</view>
+      </view>
+      <view wx:else>
+        <view class="list" wx:for="{{informantsList.child}}" wx:key="{{item.voice}}">
+          <view class="shop">
+            <view class="shop-left">
+              <image src="{{item.img}}"></image>
+              <view class="shop-left-info">
+              <text style="font-size: 35rpx;">{{item.name}}</text>
+              <text style="font-size: 25rpx;">{{item.memo}}</text>
+              </view>
+            </view>
+            <view class="shop-centre" >
+                   <image style="width: 60rpx; height: 60rpx;" src="{{broadcastVoice != item.voice?start:stop}}" bindtap="onBroadcast" data-voice="{{item.voice}}" data-audition="{{item.audition}}"></image>
+              <text style="font-size: 30rpx;">试听</text>
+               </view>
+            <view class="shop-right">
+                   <image   src="{{item.opt?cancel:define}}" bindtap="addSpeaker" data-array="{{informantsList.child}}"  data-name="{{item.name}}" data-memo="{{item.memo}}" data-voice="{{item.voice}}"  data-opt="{{item.opt}}" data-sceneType="child"  data-index="{{index}}"  data-img="{{item.img}}" data-optImg="{{item.optImg}}" ></image> 
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+   </swiper-item>  
+ 
+
+
+<!-- 所有英文发音人 --> 
+ <swiper-item>  
+    <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view class="kong"></view>
+      <view wx:if="{{informantsList.english==''}}" class="vacancy">
+        <image src="../../../img/icon/icon-vacancy.png"></image>
+        <view>暂时没有相关的发音人</view>
+      </view>
+      <view wx:else>
+        <view class="list" wx:for="{{informantsList.english}}" wx:key="{{item.voice}}"  >
+          <view class="shop">
+            <view class="shop-left">
+              <image src="{{item.img}}"></image>
+              <view class="shop-left-info">
+              <text style="font-size: 35rpx;">{{item.name}}</text>
+              <text style="font-size: 25rpx;">{{item.memo}}</text>
+              </view>
+            </view>
+            <view class="shop-centre" >
+                  <image style="width: 60rpx; height: 60rpx;" src="{{broadcastVoice != item.voice?start:stop}}" bindtap="onBroadcast" data-voice="{{item.voice}}" data-audition="{{item.audition}}"></image>
+              <text style="font-size: 30rpx;">试听</text>
+               </view>
+            <view class="shop-right">
+            <image   src="{{item.opt?cancel:define}}" bindtap="addSpeaker" data-array="{{informantsList.english}}"  data-name="{{item.name}}" data-memo="{{item.memo}}" data-voice="{{item.voice}}"  data-opt="{{item.opt}}" data-sceneType="english"  data-index="{{index}}" data-img="{{item.img}}" data-optImg="{{item.optImg}}"  ></image> 
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>  
+
+
+
+
+
+   <!-- 所有方言发音人 --> 
+  <swiper-item>  
+    <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}">
+        <view class="kong"></view>
+      <view wx:if="{{informantsList.dialect==''}}" class="vacancy">
+        <image src="../../../img/icon/icon-vacancy.png"></image>
+        <view>暂时没有相关的发音人</view>
+      </view>
+      <view wx:else>
+        <view class="list" wx:for="{{informantsList.dialect}}" wx:key="{{item.voice}}">
+          <view class="shop">
+            <view class="shop-left">
+               <image src="{{item.img}}"></image>
+              <view class="shop-left-info">
+              <text style="font-size: 35rpx;">{{item.name}}</text>
+              <text style="font-size: 25rpx;">{{item.memo}}</text>
+              </view>
+            </view>
+            <view class="shop-centre" >
+                   <image style="width: 60rpx; height: 60rpx;" src="{{broadcastVoice != item.voice?start:stop}}" bindtap="onBroadcast" data-voice="{{item.voice}}" data-audition="{{item.audition}}"></image>
+              <text style="font-size: 30rpx;">试听</text>
+               </view>
+            <view class="shop-right">
+             
+                <image   src="{{item.opt?cancel:define}}" bindtap="addSpeaker" data-array="{{informantsList.dialect}}"  data-name="{{item.name}}" data-memo="{{item.memo}}" data-voice="{{item.voice}}"  data-opt="{{item.opt}}" data-sceneType="dialect"  data-index="{{index}}" data-img="{{item.img}}" data-optImg="{{item.optImg}}" ></image> 
+            
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>  
+ 
+</swiper>  
+</view>
+<view  class="btn-v">
+
+<view class="btn-info" bindtap="returnComposite">返回配音</view>
+
+</view>
+</view>
+
+
+<!-- 合成 -->
+    <view class="page-bod"  wx:elif="{{selectedOrNot==false}}">
+    <view class="page-haed" >
+    <image src="{{heart}}" class="inco"  ></image>
+    <view  class="page-synopsis">喜欢 [完美AI配音] ,添加到我的小程序 </view>
+        <image src="{{arrowhead}}" class="inco"  style="height: 30px; width: 30px;" ></image>
+    </view>
+   
+    <view class="conts">
+        <textarea class="areas"  minlength="{{min}}" maxlength="{{max}}" bindinput="inputs"   bindblur="inputWatch" placeholder="{{texts}}"> 
+           <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text>
+        </textarea>
+    </view>
+ 
+ 
+    <scroll-view scroll-x class="scroll-view-informants">
+    <view wx:if="{{informants==''}}" class="vacancy">
+            <view class="item-opt" bindtap="more"  data-url="pages/selectinfo/index" >
+                    <image src="{{more}}" class="incow" ></image>
+                    <view class="item-name"   >更多</view>
+                    <view class="item-memo"   >发音人</view>
+                    </view>
+          </view>
+          <view wx:else>
+            <view class=" page-radio-group" >
+                <label wx:for="{{informants}}" wx:key="{{item.value}}">
+                  <view class="item-opt" bindtap="optInformant"  data-name="{{item.name}}" data-memo="{{item.memo}}" data-voice="{{item.voice}}"    > 
+            
+                            <image src="{{optInformant == item.voice ?  item.optImg:item.img}}" class="icon" ></image>
+                            <view class="item-name"  >{{item.name}}</view>
+                            <view class="item-memo"  >{{item.memo}}</view>
+                </view>
+                </label>
+                    <view class="item-opt"  bindtap="more"  data-url="pages/selectinfo/index" >
+                    <image src="{{more}}" class="icon" ></image>
+                    <view class="item-name"  >更多</view>
+                    <view class="item-memo"  >发音人</view>
+                    </view>
+            </view>
+          </view>  
+    
+    </scroll-view>
+
+          <!-- 语音音量 -->
+    <view class="page-column">
+    <view class="" style="margin: 20rpx ;  ">音量</view>
+    <view class="page-section page-section-gap">
+    <slider value="{{defaultVolume}}" max="{{maxVolume}}" min="{{minVolume}}"   name="tone" show-value  bindchange="getVolume"></slider>
+    </view>
+    </view>
+            <!-- 语音语速 -->
+    <view class="page-column" style="margin-top: 20px;">
+ 
+   <view class="" style="margin: 20rpx ; ">语速</view>
+       <view class="page-section page-section-gap">
+        <slider value="{{defaultSpeed}}" max="{{maxSpeed}}" min="{{minSpeed}}"   name="tone" show-value bindchange="getSpeed"></slider>
+          </view>
+    </view>
+ 
+
+  <view  class="btn-v">
+
+  <view class="btn-info" bindtap="createSpeech"   >立即生成</view>
+ 
+  </view>
+
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <view class="dialog-box" wx:if="{{showModal}}">
+      <text>点击复制->粘贴到浏览器上即可下载</text>
+      <button bindtap="confirm">复制</button>
+    </view>
+ 
+  </view>   

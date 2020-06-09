@@ -1,0 +1,242 @@
+/* 导航 */
+.foot{
+  background-color:#fff;
+}
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  border-top: 0.5px solid #d5d5d5;
+  display: flex;
+  font-size: 0;
+  background: #fff;
+}
+.tabbar-item {
+  flex: 1;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 8rpx 10rpx 0;
+  color: #333333;
+}
+
+.tabbar-item:nth-child(3){
+  position: relative;
+  bottom: 50rpx;
+  height:150rpx;
+  flex: 0.7;
+}
+
+.tabbar-item:nth-child(3) .tabbar-item-icon{
+  height: 100rpx;
+  background: #fff;
+  border-radius: 50%;
+  border-top: solid 1px gray;
+}
+
+.tabbar-item:nth-child(3) .tabbar-item-icon image{
+  width: 100rpx;
+  height: 106rpx;
+  padding-top: 6rpx;
+}
+
+.tabbar-item:nth-child(3) .tabbar-item-text{
+  line-height: 0;
+  font-size: 28rpx;
+  margin-top: 8px;
+  color: #808080;
+}
+
+.tabbar-item-icon {
+  margin-bottom: 6rpx;
+  height: 56rpx;
+}
+
+.tabbar-item-icon image {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.tabbar-item-text {
+  font-size: 28rpx;
+  line-height: 20rpx;
+  color: #808080;
+}
+.active {
+  color: #23ac38;
+}
+
+.weui-search-bar {
+  position: relative;
+  padding: 8px 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+  background-color: #EFEFF4;
+  border-top: 1rpx solid #D7D6DC;
+  /* border-bottom: 1rpx solid #D7D6DC; */
+}
+.weui-icon-search_in-box {
+  position: absolute;
+  left: 10px;
+  top: 7px;
+}
+.weui-search-bar__form {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+          flex: auto;
+  border-radius: 5px;
+  background: #FFFFFF;
+  border: 1rpx solid #E6E6EA;
+}
+.weui-search-bar__box {
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.weui-search-bar__input {
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+}
+.weui-search-bar__cancel-btn {
+  margin-left: 10px;
+  line-height: 28px;
+  color: #09BB07;
+  white-space: nowrap;
+}
+.opts{
+  display: flex;
+  flex-wrap: wrap;
+}
+.opts .opt{
+  width:25%;
+  display: flex;
+  flex-direction:  column ;
+  float: left;
+  height:100%;
+  align-items: center;
+  text-align:center;
+  padding-top:15rpx;
+  }
+
+.opt-icon{
+height: 100rpx;
+width: 100rpx;
+}
+.txt-font{
+  text-align: center;
+  font-size:20rpx;
+
+}
+
+.nav {
+  margin-bottom: 30rpx; 
+  font-size: 34rpx;
+  background: #fff;
+}
+
+.nav .item {
+  margin-top:20rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  border-top:5px solid #e5e5e5;
+  width: 100%;
+  border-radius: 10rpx;
+}
+
+
+.nav button.item {
+  margin: 0;
+  line-height: inherit;
+  font-size: inherit;
+}
+
+.nav button.item .new_tips {
+  position: relative;
+}
+
+.nav button.item .new_tips:before {
+  content: '';
+  position: absolute;
+  top: -2rpx;
+  right: -14rpx;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #f43530;
+  border-radius: 100%;
+}
+
+.nav .icon {
+  display: flex;
+  align-items: center;
+  font-size: 40rpx;
+  color:#333;
+}
+.nav .wallet{
+  display:inline-flex;
+}
+.nav .wallet .icon {
+  color: #c21327;
+}
+
+.nav .discount_coupon .icon {
+  color: #bd9445;
+}
+
+.nav image {
+  margin-bottom: 10rpx;
+  margin-left: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+.joinVip{
+  font-size:27rpx;
+  line-height:27rpx;
+  display:inline-block;
+  color:#dab643;
+  text-decoration:underline;
+}
+.icon-right{
+  margin-right: 20rpx;
+  display: flex;
+  justify-content:center;
+  text-align: center;
+  align-items: center;
+}
+.item-opt{
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  /* margin-left: 10px; */
+   /* background-image:"../images/33.png"; */
+ }
+ .item-memo{
+  display: flex;
+  align-items: center;
+  font-size: 25rpx;
+ }
+ .text-info{
+  /* line-height:65rpx; */
+  padding-top: 10rpx;
+  margin-left: 30rpx;
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+}
+.text-f{
+  padding-top: 10rpx;
+  font-size: 25rpx;
+  color: darkslategray;
+}
